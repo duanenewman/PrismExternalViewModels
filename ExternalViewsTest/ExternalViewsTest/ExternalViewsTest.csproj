@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\ExternalViewsTest.Views\ExternalViewsTest.Views.csproj" />
     <ProjectReference Include="..\ExternalViewsTest.Lib\ExternalViewsTest.Lib.csproj" />
   </ItemGroup>
 

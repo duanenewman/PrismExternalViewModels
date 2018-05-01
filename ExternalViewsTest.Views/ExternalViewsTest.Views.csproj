@@ -4,7 +4,6 @@
     <TargetFramework>netstandard1.4</TargetFramework>
     <PackageTargetFallback>portable-win+net45+wp8+win81+wpa8</PackageTargetFallback>
     <DebugType>full</DebugType>
-    <RootNamespace>ExternalViewsTest.Lib</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,13 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ExternalViewsTest.Views\ExternalViewsTest.Views.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Views\SecondPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
+    <Compile Update="FourthPage.xaml.cs">
+      <DependentUpon>FourthPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

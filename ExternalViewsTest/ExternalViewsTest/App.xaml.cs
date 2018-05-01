@@ -36,6 +36,7 @@ namespace ExternalViewsTest
             Container.RegisterTypeForNavigation<MainPage>();
             Container.RegisterTypeForNavigation<SecondPage>();
             Container.RegisterTypeForNavigation<ThirdPage>();
+            Container.RegisterTypeForNavigation<FourthPage>();
         }
 
         protected override void ConfigureViewModelLocator()

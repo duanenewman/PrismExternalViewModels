@@ -193,6 +193,10 @@
     <PackageReference Include="Prism.Unity.Forms" Version="6.3.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\ExternalViewsTest.Views\ExternalViewsTest.Views.csproj">
+      <Project>{ed4fe1f2-d8bd-479a-a1cc-3426f05fc533}</Project>
+      <Name>ExternalViewsTest.Views</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ExternalViewsTest.Lib\ExternalViewsTest.Lib.csproj">
       <Project>{d997f9e8-5368-426a-bcbb-d95373f04e69}</Project>
       <Name>ExternalViewsTest.Lib</Name>

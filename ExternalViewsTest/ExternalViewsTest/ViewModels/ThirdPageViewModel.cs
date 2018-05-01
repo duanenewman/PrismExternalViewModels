@@ -1,4 +1,5 @@
 ﻿using ExternalViewsTest.Lib.ViewModels;
+using Prism.Commands;
 using Prism.Navigation;
 
 namespace ExternalViewsTest.ViewModels
@@ -9,6 +10,10 @@ namespace ExternalViewsTest.ViewModels
             : base(navigationService)
         {
             Title = "Third Page - From VM";
+            GoToFourthPageCommand = new DelegateCommand(() => navigationService.NavigateAsync("FourthPage"));
+
         }
+
+        public DelegateCommand GoToFourthPageCommand { get; set; }
     }
 }

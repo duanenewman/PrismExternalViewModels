@@ -19,4 +19,14 @@ namespace ExternalViewsTest.Lib.ViewModels
 
         public DelegateCommand GoToThirdPageCommand { get; set; }
     }
+	public class FourthPageViewModel : ViewModelBase
+    {
+        public FourthPageViewModel(INavigationService navigationService)
+            : base(navigationService)
+        {
+            Title = "Fourth Page";
+
+        }
+        
+    }
 }
