@@ -18,11 +18,14 @@ namespace ExternalViewsTest.Lib.ViewModels
             set => SetProperty(ref message, value);
         }
 
+        public DelegateCommand GoToSecondPageCommand { get; set; }
+
         public MainPageViewModel(INavigationService navigationService) 
             : base (navigationService)
         {
             Title = "Main Page";
             Message = "Message from VM";
+            GoToSecondPageCommand = new DelegateCommand(() => navigationService.NavigateAsync("SecondPage"));
         }
     }
 }

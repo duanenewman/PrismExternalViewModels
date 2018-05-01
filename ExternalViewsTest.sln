@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalViewsTest", "ExternalViewsTest\ExternalViewsTest\ExternalViewsTest.csproj", "{082A6EAC-F5FD-419B-B3C6-48C410476984}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExternalViewsTest", "ExternalViewsTest\ExternalViewsTest\ExternalViewsTest.csproj", "{082A6EAC-F5FD-419B-B3C6-48C410476984}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalViewsTest.Android", "ExternalViewsTest\ExternalViewsTest.Android\ExternalViewsTest.Android.csproj", "{8227FFC3-E455-4A7C-B6FD-E8C0DB637366}"
 EndProject
@@ -11,7 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalViewsTest.iOS", "Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalViewsTest.UWP", "ExternalViewsTest\ExternalViewsTest.UWP\ExternalViewsTest.UWP.csproj", "{C45CFFA3-3359-455C-80C7-35BCC38C54C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalViewsTest.Lib", "ExternalViewsTest\ExternalViewsTest.Lib\ExternalViewsTest.Lib.csproj", "{D997F9E8-5368-426A-BCBB-D95373F04E69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExternalViewsTest.Lib", "ExternalViewsTest\ExternalViewsTest.Lib\ExternalViewsTest.Lib.csproj", "{D997F9E8-5368-426A-BCBB-D95373F04E69}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platform", "Platform", "{A1E60C25-D5D5-4A9A-89C2-A1801520910E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -304,6 +306,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8227FFC3-E455-4A7C-B6FD-E8C0DB637366} = {A1E60C25-D5D5-4A9A-89C2-A1801520910E}
+		{E988F017-65FA-4FDD-9542-778FD80D4BDF} = {A1E60C25-D5D5-4A9A-89C2-A1801520910E}
+		{C45CFFA3-3359-455C-80C7-35BCC38C54C1} = {A1E60C25-D5D5-4A9A-89C2-A1801520910E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D0FB1AD-546F-4115-A4CA-C0CE0E999A94}

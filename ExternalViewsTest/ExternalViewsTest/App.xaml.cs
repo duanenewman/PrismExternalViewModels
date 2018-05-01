@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Globalization;
 using System.Reflection;
-using Prism;
-using ExternalViewsTest.Lib.ViewModels;
 using ExternalViewsTest.Lib.Views;
+using Prism;
+using ExternalViewsTest.Views;
 using Prism.Mvvm;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -34,7 +34,8 @@ namespace ExternalViewsTest
         {
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainPage>();
-
+            Container.RegisterTypeForNavigation<SecondPage>();
+            Container.RegisterTypeForNavigation<ThirdPage>();
         }
 
         protected override void ConfigureViewModelLocator()
@@ -43,14 +44,9 @@ namespace ExternalViewsTest
 
             ViewModelLocationProvider.SetDefaultViewTypeToViewModelTypeResolver(viewType =>
             {
-                var viewName = viewType.FullName;
-                viewName = viewName.Replace(".Views.", ".ViewModels.");
-                var suffix = viewName.EndsWith("View") ? "Model" : "ViewModel";
-                var viewModelName = String.Format(CultureInfo.InvariantCulture, "{0}{1}", viewName, suffix);
-
-                var assembly = typeof(ViewModelBase).GetTypeInfo().Assembly;
-                //var assembly = viewType.GetTypeInfo().Assembly;
-                var type = assembly.GetType(viewModelName);
+                var type = 
+                    ExternalViewsTest.Lib.ViewModelLocator.ViewTypeToViewModelTypeResolver(viewType)
+                    ?? ViewModelLocator.ViewTypeToViewModelTypeResolver(viewType);
 
                 return type;
             });
