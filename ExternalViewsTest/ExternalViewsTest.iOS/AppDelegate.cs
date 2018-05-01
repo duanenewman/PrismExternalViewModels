@@ -1,6 +1,7 @@
 ﻿using Foundation;
+using Microsoft.Practices.Unity;
 using Prism;
-using Prism.Ioc;
+using Prism.Unity;
 using UIKit;
 
 
@@ -30,9 +31,9 @@ namespace ExternalViewsTest.iOS
 
     public class iOSInitializer : IPlatformInitializer
     {
-        public void RegisterTypes(IContainerRegistry container)
+        public void RegisterTypes(IUnityContainer container)
         {
-
+            
         }
     }
 }

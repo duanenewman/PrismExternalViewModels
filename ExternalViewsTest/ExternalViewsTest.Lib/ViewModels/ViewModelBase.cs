@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ExternalViewsTest.ViewModels
+namespace ExternalViewsTest.Lib.ViewModels
 {
     public class ViewModelBase : BindableBase, INavigationAware, IDestructible
     {

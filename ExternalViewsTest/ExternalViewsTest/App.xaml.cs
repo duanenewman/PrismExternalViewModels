@@ -1,7 +1,10 @@
-﻿using Prism;
-using Prism.Ioc;
-using ExternalViewsTest.ViewModels;
-using ExternalViewsTest.Views;
+﻿using System;
+using System.Globalization;
+using System.Reflection;
+using Prism;
+using ExternalViewsTest.Lib.ViewModels;
+using ExternalViewsTest.Lib.Views;
+using Prism.Mvvm;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Prism.Unity;
@@ -27,10 +30,30 @@ namespace ExternalViewsTest
             await NavigationService.NavigateAsync("NavigationPage/MainPage");
         }
 
-        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        protected override void RegisterTypes()
         {
-            containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainPage>();
+            Container.RegisterTypeForNavigation<NavigationPage>();
+            Container.RegisterTypeForNavigation<MainPage>();
+
+        }
+
+        protected override void ConfigureViewModelLocator()
+        {
+            base.ConfigureViewModelLocator();
+
+            ViewModelLocationProvider.SetDefaultViewTypeToViewModelTypeResolver(viewType =>
+            {
+                var viewName = viewType.FullName;
+                viewName = viewName.Replace(".Views.", ".ViewModels.");
+                var suffix = viewName.EndsWith("View") ? "Model" : "ViewModel";
+                var viewModelName = String.Format(CultureInfo.InvariantCulture, "{0}{1}", viewName, suffix);
+
+                var assembly = typeof(ViewModelBase).GetTypeInfo().Assembly;
+                //var assembly = viewType.GetTypeInfo().Assembly;
+                var type = assembly.GetType(viewModelName);
+
+                return type;
+            });
         }
     }
 }

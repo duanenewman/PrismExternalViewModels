@@ -1,8 +1,9 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using Microsoft.Practices.Unity;
 using Prism;
-using Prism.Ioc;
+using Prism.Unity;
 
 namespace ExternalViewsTest.Droid
 {
@@ -23,9 +24,9 @@ namespace ExternalViewsTest.Droid
 
     public class AndroidInitializer : IPlatformInitializer
     {
-        public void RegisterTypes(IContainerRegistry container)
+        public void RegisterTypes(IUnityContainer container)
         {
-            // Register any platform specific implementations
+            throw new System.NotImplementedException();
         }
     }
 }

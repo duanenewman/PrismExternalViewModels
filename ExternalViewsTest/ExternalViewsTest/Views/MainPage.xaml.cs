@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace ExternalViewsTest.Views
+namespace ExternalViewsTest.Lib.Views
 {
 	public partial class MainPage : ContentPage
 	{

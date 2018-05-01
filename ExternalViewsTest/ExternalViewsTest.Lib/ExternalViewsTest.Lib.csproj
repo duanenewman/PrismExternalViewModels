@@ -4,21 +4,12 @@
     <TargetFramework>netstandard1.4</TargetFramework>
     <PackageTargetFallback>portable-win+net45+wp8+win81+wpa8</PackageTargetFallback>
     <DebugType>full</DebugType>
+    <RootNamespace>ExternalViewsTest.Lib</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="2.4.0.91020" />
     <PackageReference Include="Prism.Unity.Forms" Version="6.3.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\ExternalViewsTest.Lib\ExternalViewsTest.Lib.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Views\MainPage.xaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
-    </Compile>
+    <PackageReference Include="Xamarin.Forms" Version="2.4.0.91020" />
   </ItemGroup>
 
 </Project>

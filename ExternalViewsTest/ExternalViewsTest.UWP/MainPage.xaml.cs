@@ -1,5 +1,4 @@
 ﻿using Prism;
-using Prism.Ioc;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,6 +13,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.Practices.Unity;
+using Prism.Unity;
 
 namespace ExternalViewsTest.UWP
 {
@@ -29,8 +30,9 @@ namespace ExternalViewsTest.UWP
 
     public class UwpInitializer : IPlatformInitializer
     {
-        public void RegisterTypes(IContainerRegistry container)
+        public void RegisterTypes(IUnityContainer container)
         {
+            
 
         }
     }
